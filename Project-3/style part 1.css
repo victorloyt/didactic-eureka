@@ -1,0 +1,180 @@
+/* ----------------------------------------
+Base Styles
+------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+.social {
+  color: #44545e;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* ----------------------------------------
+Typography
+------------------------------------------- */
+
+h1 {
+  font-family: Roboto;
+  letter-spacing: 15px;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: Roboto;
+  color: #44545e;
+}
+
+h3 {
+  font-family: Roboto;
+  color: #44545e;
+
+}
+
+.text {
+  color: #44545e;
+  line-height: 26px;
+  padding-bottom: 20px;
+
+}
+
+.issues a {
+  color: #7b98aa;
+  line-height: 30px;
+  font-family: Roboto;
+  font-weight: bold;
+  text-decoration: none;
+
+
+
+}
+
+/* ----------------------------------------
+Lists
+------------------------------------------- */
+
+
+
+/* ----------------------------------------
+Layout
+------------------------------------------- */
+
+.title-image {
+  background-image: url(images/blog_header_bg.jpg);
+  display: inline-block;
+  color: white;
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+}
+
+.title-text {
+  top: 40%;
+  position: relative;
+
+}
+
+
+.post img {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.post {
+  line-height: 1.68;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  line-height: 1.68;
+  width: 100%;
+/*    flex-direction: row;*/
+}
+
+.column {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ----------------------------------------
+Header
+------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  height: 60px;
+
+}
+
+ul.navigation {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 60px;
+  flex-wrap: nowrap;
+
+}
+
+.navigation a {
+  color: #7b98aa;
+  text-decoration: none;
+  font-family: Roboto;
+  font-weight: bold
+}
+
+.container {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+
+/* ----------------------------------------
+Buttons
+------------------------------------------- */
+
+
+
+/* ----------------------------------------
+Footer
+------------------------------------------- */
+
+footer {
+  width: 100%;
+  font-size: 32px;
+  display: inline-block;
+  background-color: #ccf0ff;
+  text-align: center;
+}
+
+.copyright {
+  color: #44545e;
+  border-top: 3px solid;
+  font-family: Roboto;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+
+}
