@@ -1,5 +1,5 @@
-google.load("jquery", "1.5");
-google.load("jqueryui", "1.7.0");
+// google.load("jquery", "1.5");
+// google.load("jqueryui", "1.7.0");
 
 /*************************/
 /********* MAIN **********/
