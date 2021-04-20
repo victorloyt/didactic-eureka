@@ -128,8 +128,8 @@ $(document).ready(function () {
 
     $(".instructions").css({
         "position": "absolute",
-        "top": wih / 2 + "px",
-        "left": 0.88 * wiw / 2 + "px",
+        "top": 0.76 *wih / 2 + "px",
+        "left": 0.58 * wiw / 2 + "px",
         "font-size": "32px"
     })
 
