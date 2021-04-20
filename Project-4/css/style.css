@@ -17,7 +17,7 @@ body {
 }
 
 .polaroid {
-    opacity=0;
+    opacity: 0;
     width: 281px;
     height: 452px;
     background-image: url(../images/zig-bg.jpg);
