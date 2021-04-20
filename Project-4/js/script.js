@@ -1,12 +1,13 @@
-google.load("jquery", "1.5");
-google.load("jqueryui", "1.7.0");
+// google.load("jquery", "1.5");
+// google.load("jqueryui", "1.7.0");
 
 /*************************/
 /********* MAIN **********/
 /*************************/
 
 // wait for page to load
-google.setOnLoadCallback(function () {
+// google.setOnLoadCallback(function () {
+$(document).ready(function () {
 
     if (window.innerWidth == undefined) {
         var wiw = 1000;
