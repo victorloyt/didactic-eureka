@@ -1,11 +1,10 @@
-// google.load("jquery", "1.5");
-// google.load("jqueryui", "1.7.0");
-
 /*************************/
 /********* MAIN **********/
 /*************************/
 
+// I used the poloroid script as a foundation for my project. Beyond that, I added in the CSS animations of the falling images, as well as various functions to help with adding images and names to the base background image. 
 
+// Hard coded watch names (formatted with python)
 filenames = ["44mm Townsman Automatic Black Stainless Steel Watch",
 "ARC-03 Three-Hand Stainless Steel Watch",
 "Bronson Chronograph Black Stainless Steel Watch",
@@ -107,8 +106,7 @@ filenames = ["44mm Townsman Automatic Black Stainless Steel Watch",
 "Virginia Stainless Steel Watch",
 "Virginia Two-Tone Stainless Steel Watch"]
 
-// wait for page to load
-// google.setOnLoadCallback(function () {
+// Page Loading
 $(document).ready(function () {
 
     if (window.innerWidth == undefined) {
@@ -119,7 +117,7 @@ $(document).ready(function () {
         var wih = window.innerHeight;
     }
 
-    //    console.log("height: ", wih+"px")
+// Landing message formatting
 
     $(".main").css({
         "height": wih + "px",
@@ -136,12 +134,15 @@ $(document).ready(function () {
     var counter = 0
     var zindexnr = 1;
 
+// Landing message transition
     $(".main").click(function (event) {
         $(".instructions").css({
             "transition": "0.5s",
             "opacity": "0"
         })
-        //        console.log("hi")
+
+
+// Adding watch image and names
         curr_image = "image" + counter + ".jpg"
 
         $(".main").append("<div class='polaroid'> </div>")
@@ -150,55 +151,15 @@ $(document).ready(function () {
         current_selection.append("<img class='images' src=" + "images/" + curr_image + " />")
         current_selection.append("<p>" + filenames[counter] + "</p>")
 
-    //   var originalURL = "images/filenames2.txt";
-    //   var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
-  
-    //   $.ajax({
-    //     url: queryURL,
-    //     method: "GET",
-    //     dataType: "jsonp",
-    //     // this headers section is necessary for CORS-anywhere
-    //     headers: {
-    //       "x-requested-with": "xhr" 
-    //     },
-    //     success: function (data) {
-
-    //           var lines = data.split('\n');
-    //           var caption = lines[counter - 1]
-    //           console.log(caption)
-    //           current_selection.append("<p>" + caption + "</p>")
-    //       }}).done(function (response) {
-    //           console.log('CORS anywhere response', response);
-    //       }).fail(function (jqXHR, textStatus) {
-    //           console.error(textStatus)
-    //       })
-
-
-        // $.ajax({
-        //     type: "GET",
-        //     // url: "/images/filenames2.txt",
-        //     url: "D:/Google Drive/Columbia MSAUD/Semester 2/Coding for Spatial Practices/didactic-eureka/Project-4/images/filenames2.json",
-        //     dataType: "jsonp",
-        //     crossDomain: true,
-        //     success: function (data) {
-
-        //         var lines = data.split('\n');
-        //         var caption = lines[counter-1]
-        //         console.log(caption)
-        //         current_selection.append("<p>" + caption + "</p>")
-        //     }
-
-        // });
-
+// Image counter, loops back to the first image if it reaches the 100th image
         if (counter == 99) {
             counter = 0 
         } else {
             counter += 1
         }
         console.log(counter)
-
-        //        $(".images").each(function (i) {
-
+        
+// (Original script for rotating the poloroids, but the website seems to stop working once I commented this portion out)
         var tempVal = Math.round(Math.random());
         if (tempVal == 1) {
             var rotDegrees = randomXToY(330, 360); // rotate left
@@ -206,27 +167,22 @@ $(document).ready(function () {
             var rotDegrees = randomXToY(0, 30); // rotate right
         }
 
-
         var cssObj = {
             'left': Math.random() * (wiw - 400),
             'top': Math.random() * (wih - 400),
             '-webkit-transform': 'rotate(' + rotDegrees + 'deg)', // safari only
             'transform': 'rotate(' + rotDegrees + 'deg)'
         }; // added in case CSS3 is standard
-        //        console.log(cssObj)
         $(current_selection).css(cssObj);
-
-        //        console.log("blurred-top")
         $(current_selection).addClass("slide-in-bck-center")
 
 
-        // Set the Z-Index (used to display images on top while dragging)
-//        var zindexnr = 1;
+// Set the Z-Index (used to display images on top while dragging)
         zindexnr += 1
 
-        // boolean to check if the user is dragging
+// Boolean to check if the user is dragging
         var dragging = false;
-        // Show the polaroid on top when clicked on
+// Show the polaroid on top when clicked on
         $(".polaroid").mouseup(function (e) {
             if (!dragging) {
                 // Bring polaroid to the foreground
@@ -240,7 +196,7 @@ $(document).ready(function () {
             }
         });
 
-        // Make the polaroid draggable & display a shadow when dragging
+// Make the polaroid draggable & display a shadow when dragging
         $(".polaroid").draggable({
             cursor: 'crosshair',
             start: function (event, ui) {
