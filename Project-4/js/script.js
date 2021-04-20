@@ -142,7 +142,7 @@ $(document).ready(function () {
         })
 
 
-// Adding watch image and names
+// Adding watch images and names
         curr_image = "image" + counter + ".jpg"
 
         $(".main").append("<div class='polaroid'> </div>")
