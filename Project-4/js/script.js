@@ -5,6 +5,108 @@
 /********* MAIN **********/
 /*************************/
 
+
+filenames = ["44mm Townsman Automatic Black Stainless Steel Watch",
+"ARC-03 Three-Hand Stainless Steel Watch",
+"Bronson Chronograph Black Stainless Steel Watch",
+"Bronson Chronograph Brown Croco Leather Watch",
+"Bronson Twist Smoke Stainless Steel Watch",
+"Carlie Mini Automatic Stainless Steel Mesh Watch",
+"Carlie Mini Three-Hand Black Leather Watch",
+"Carlie Mini Three-Hand Gold-Tone Stainless Steel Mesh Watch",
+"Carlie Mini Three-Hand Gold-Tone Stainless Steel Watch",
+"Carlie Mini Three-Hand Rose Gold-Tone Stainless Steel Watch",
+"Carlie Mini Three-Hand Sand Leather Watch",
+"Carlie Mini Three-Hand Stainless Steel Watch",
+"Carlie Mini Three-Hand Tan Leather Watch",
+"Carlie Three-Hand Stainless Steel Watch",
+"Coachman Chronograph Brown Leather Watch",
+"Copeland 42mm Three-Hand Luggage Leather Watch",
+"Copeland Three-Hand Midnight Navy Leather Watch",
+"Copeland Three-Hand Tan Leather Watch",
+"Daisy Three-Hand Black Leather Watch",
+"Everett Three-Hand Date Black Stainless Steel Watch",
+"Everett Three-Hand Date Stainless Steel Watch",
+"Everett Three-Hand Date Two-Tone Stainless Steel Watch",
+"FB-01 Three-Hand Date Black Silicone Watch",
+"FB-01 Three-Hand Date Gold-Tone Stainless Steel Watch",
+"FB-01 Three-Hand Date Rose Gold-Tone Stainless Steel Watch",
+"FB-01 Three-Hand Date Stainless Steel Watch",
+"FB-01 Three-Hand Date Two-Tone Stainless Steel Watch Black",
+"FB-01 Three-Hand Date Two-Tone Stainless Steel Watch Green",
+"FB-01 Three-Hand Date Two-Tone Stainless Steel Watch",
+"FB-01 Three-Hand White Ceramic Watch",
+"FB-03 Chronograph Black Silicone Watch",
+"FB-03 Chronograph Gold-Tone Stainless Steel Watch",
+"Forrester Chronograph Brown Leather Watch",
+"Forrester Chronograph Navy Leather Watch",
+"Gabby Three-Hand Date Gold-Tone Stainless Steel Watch",
+"Gabby Three-Hand Date Rose Gold-Tone Stainless Steel Watch",
+"Gabby Three-Hand Date Two-Tone Stainless Steel Watch",
+"Garrett Chronograph Gold-Tone Stainless Steel Watch",
+"Garrett Chronograph Luggage Leather Watch",
+"Garrett Chronograph Silver-Tone Stainless Steel Watch",
+"Georgia Bone Leather Watch",
+"Georgia Brown Leather Watch",
+"Grant Chronograph Light Brown Leather Watch",
+"Hybrid Smartwatch Carlie Rose Gold-Tone Stainless Steel",
+"Hybrid Smartwatch HR Charter Blush Silicone",
+"Hybrid Smartwatch HR Charter Stainless Steel",
+"Hybrid Smartwatch HR Collider Black Silicone",
+"Hybrid Smartwatch HR Collider Tan Leather",
+"Hybrid Smartwatch HR FB-01 Black Stainless Steel",
+"Hybrid Smartwatch HR Latitude Black Silicone",
+"Hybrid Smartwatch HR Monroe Black Leather",
+"Hybrid Smartwatch HR Monroe Stainless Steel",
+"Hybrid Smartwatch Neutra Amber Leather",
+"Hybrid Smartwatch Neutra Stainless Steel",
+"Inscription Automatic Gold-Tone Stainless Steel Watch",
+"Inscription Automatic Smoke Stainless Steel Watch",
+"Izzy Multifunction Two-Tone Stainless Steel Watch",
+"Jacqueline Beige Leather Watch",
+"Jacqueline Brown Leather Watch",
+"Jacqueline Date Blush Leather Watch",
+"Jacqueline Navy Leather Watch",
+"Jacqueline Stainless Steel Watch",
+"Jacqueline Three-Hand Blush Leather Watch",
+"Jacqueline Three-Hand Date Brown Leather Watch",
+"Josey Three-Hand Brown Leather Watch",
+"Kalya Three-Hand Blush Leather Watch",
+"Machine Chronograph Smoke Stainless Steel Watch",
+"Machine Three-Hand Date Stainless Steel Watch",
+"Minimalist Three-Hand Brown Leather Watch",
+"Monty Chronograph Luggage Leather Watch",
+"Nate Chronograph Black Stainless Steel Watch",
+"Neutra Automatic Black Stainless Steel Watch",
+"Neutra Automatic Brown Leather Watch Black",
+"Neutra Automatic Brown Leather Watch White",
+"Neutra Automatic Smoke Stainless Steel Watch",
+"Neutra Automatic Two-Tone Stainless Steel Watch",
+"Neutra Chronograph Black Leather Watch",
+"Neutra Chronograph Brown Leather Watch",
+"Neutra Chronograph Luggage Leather Watch Blue",
+"Neutra Chronograph Luggage Leather Watch Green",
+"Neutra Chronograph Smoke Stainless Steel Mesh Watch",
+"Riley Multifunction Black Stainless Steel Watch",
+"Riley Multifunction Rose-Tone Stainless Steel Watch",
+"Riley Multifunction Stainless Steel Watch",
+"Sadie Multifunction Gold-Tone Stainless Steel Watch",
+"Scarlette Micro Three-Hand Date Gold-Tone Stainless Steel Watch V2",
+"Scarlette Micro Three-Hand Date Gold-Tone Stainless Steel Watch",
+"Scarlette Micro Three-Hand Date Stainless Steel Watch",
+"Scarlette Micro Three-Hand Date Two-Tone Stainless Steel Watch Peach",
+"Scarlette Mini Three-Hand Date Two Tone Stainless Steel Watch",
+"Tailor Automatic Rose Gold-Tone Stainless Steel Mesh Watch",
+"Tailor Mechanical Rose Gold-Tone Stainless Steel Watch",
+"The Minimalist Slim Three-Hand Light Brown Leather Watch",
+"The Minimalist Three-Hand Brown Leather Watch",
+"The Minimalist Three-Hand Smoke Stainless Steel Watch",
+"Townsman 44mm Chronograph Brown Leather Watch",
+"Townsman 48mm Automatic Light Brown Leather Watch",
+"Townsman Automatic Black Leather Watch",
+"Virginia Stainless Steel Watch",
+"Virginia Two-Tone Stainless Steel Watch"]
+
 // wait for page to load
 // google.setOnLoadCallback(function () {
 $(document).ready(function () {
@@ -46,19 +148,47 @@ $(document).ready(function () {
 
         current_selection = $(".polaroid").last()
         current_selection.append("<img class='images' src=" + "images/" + curr_image + " />")
+        current_selection.append("<p>" + filenames[counter] + "</p>")
 
-        $.ajax({
-            type: "GET",
-            url: "/images/filenames2.txt",
-            success: function (data) {
+    //   var originalURL = "images/filenames2.txt";
+    //   var queryURL = "https://cors-anywhere.herokuapp.com/" + originalURL
+  
+    //   $.ajax({
+    //     url: queryURL,
+    //     method: "GET",
+    //     dataType: "jsonp",
+    //     // this headers section is necessary for CORS-anywhere
+    //     headers: {
+    //       "x-requested-with": "xhr" 
+    //     },
+    //     success: function (data) {
 
-                var lines = data.split('\n');
-                var caption = lines[counter-1]
-                console.log(caption)
-                current_selection.append("<p>" + caption + "</p>")
-            }
+    //           var lines = data.split('\n');
+    //           var caption = lines[counter - 1]
+    //           console.log(caption)
+    //           current_selection.append("<p>" + caption + "</p>")
+    //       }}).done(function (response) {
+    //           console.log('CORS anywhere response', response);
+    //       }).fail(function (jqXHR, textStatus) {
+    //           console.error(textStatus)
+    //       })
 
-        });
+
+        // $.ajax({
+        //     type: "GET",
+        //     // url: "/images/filenames2.txt",
+        //     url: "D:/Google Drive/Columbia MSAUD/Semester 2/Coding for Spatial Practices/didactic-eureka/Project-4/images/filenames2.json",
+        //     dataType: "jsonp",
+        //     crossDomain: true,
+        //     success: function (data) {
+
+        //         var lines = data.split('\n');
+        //         var caption = lines[counter-1]
+        //         console.log(caption)
+        //         current_selection.append("<p>" + caption + "</p>")
+        //     }
+
+        // });
 
         if (counter == 99) {
             counter = 0 
